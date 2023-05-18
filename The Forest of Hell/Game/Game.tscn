@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Game.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.00784314, 1, 0, 1 )
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 25, 1, 25 )
+
+[node name="World" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Trees" type="Node" parent="."]
+
+[node name="Floor" type="StaticBody" parent="."]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
+
+[node name="CSGBox" type="CSGBox" parent="Floor"]
+width = 50.0
+height = 1.0
+depth = 50.0
+material = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0752344, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.4764, 0 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 335.0
+margin_top = 270.0
+margin_right = 418.0
+margin_bottom = 292.0
+rect_scale = Vector2( 5, 5 )
+text = "Generating..."
