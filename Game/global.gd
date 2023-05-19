@@ -7,6 +7,11 @@ var tool = 1
 var stone = 0
 var fast_rendering = true
 var experiments = false
+var development = true
+var days = 1
+var night = true
 
-func _process(delta):
-	pass
+func _ready():
+	if development:
+		wood = 10000
+		stone = 10000

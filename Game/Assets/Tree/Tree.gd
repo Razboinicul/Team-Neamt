@@ -12,6 +12,8 @@ func _on_Area_area_entered(area):
 		col.append(area)
 	if area.name == "Water":
 		queue_free()
+	if area.name == "House":
+		queue_free()
 
 func _process(delta):
 	if global.axe_attack and col != []:

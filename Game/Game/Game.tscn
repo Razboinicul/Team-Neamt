@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Game.gd" type="Script" id=2]
+[ext_resource path="res://Assets/House/House.tscn" type="PackedScene" id=3]
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.00784314, 1, 0, 1 )
@@ -15,13 +16,21 @@ extents = Vector3( 27, 0.1, 0.5 )
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0, 0.384314, 1, 1 )
 
+[sub_resource type="ProceduralSky" id=5]
+
+[sub_resource type="Environment" id=6]
+background_mode = 2
+background_sky = SubResource( 5 )
+background_color = Color( 0.529412, 0.807843, 0.921569, 1 )
+ambient_light_color = Color( 1, 1, 1, 1 )
+
 [node name="World" type="Spatial"]
 script = ExtResource( 2 )
 
 [node name="Trees" type="Node" parent="."]
 
 [node name="Floor" type="StaticBody" parent="."]
-transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
+transform = Transform( 25, 0, 0, 0, 1, 0, 0, 0, 25, 0, 0, 0 )
 
 [node name="CSGBox" type="CSGBox" parent="Floor"]
 width = 50.0
@@ -34,12 +43,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0752344, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.4764, 0 )
-
-[node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 0.819152, -0.573577, 0, 0.573577, 0.819152, 0, 0, 0, 1, -79.6615, 228.705, 0 )
-shadow_enabled = true
-shadow_color = Color( 0.196078, 0.196078, 0.196078, 1 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.641359, 1.57526, -560.947 )
 
 [node name="UI" type="Control" parent="."]
 margin_right = 1024.0
@@ -69,6 +73,7 @@ margin_bottom = 64.0
 text = "Stone: 0"
 
 [node name="Water" type="StaticBody" parent="."]
+transform = Transform( 2.4, 0, 0, 0, 1, 0, 0, 0, 1, 33.6528, 0, 0.652313 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="Water"]
 transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -13.0253, 0.510362, 51.4073 )
@@ -80,3 +85,15 @@ width = 53.0
 height = 0.1
 depth = 0.820408
 material = SubResource( 3 )
+
+[node name="House" parent="." instance=ExtResource( 3 )]
+transform = Transform( -2.18557e-06, 0, 50, 0, 50, 0, -50, 0, -2.18557e-06, 0, 0, -562.331 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 6 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

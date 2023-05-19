@@ -1,0 +1,336 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 508,
+      "max": [
+        1.7580734491348267,
+        1.3525803089141846,
+        0.1455356776714325
+      ],
+      "min": [
+        -1.750005841255188,
+        0.8096674084663391,
+        -0.1455356776714325
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 6096,
+      "componentType": 5126,
+      "count": 508,
+      "max": [
+        1.0,
+        0.9987479448318481,
+        1.0
+      ],
+      "min": [
+        -0.7660374045372009,
+        -0.9987095594406128,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 508,
+      "max": [
+        0.0,
+        0.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 780,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 12192,
+      "componentType": 5126,
+      "count": 48,
+      "max": [
+        1.2574528455734253,
+        1.2574528455734253,
+        1.0
+      ],
+      "min": [
+        -1.2574527263641357,
+        -1.2574528455734253,
+        -0.9422987699508667
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 12768,
+      "componentType": 5126,
+      "count": 48,
+      "max": [
+        0.9170289635658264,
+        0.9170290231704712,
+        1.0
+      ],
+      "min": [
+        -0.917029082775116,
+        -0.9170289635658264,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 4064,
+      "componentType": 5126,
+      "count": 48,
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.01000000536441803
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 3120,
+      "componentType": 5125,
+      "count": 84,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "SpudTatterson (https://sketchfab.com/SpudTatterson)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/low-polly-pickaxe-d9d7df703203495cbbe1291c99bd2df4",
+      "title": "Low-Polly Pickaxe"
+    },
+    "generator": "Sketchfab-12.65.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 3456,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 4448,
+      "byteOffset": 3456,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 13344,
+      "byteOffset": 7904,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 21248,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "PickHead",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.152575,
+          0.157434,
+          0.139628,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.6
+      }
+    },
+    {
+      "name": "Wood",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.137584,
+          0.0476614,
+          0.0254204,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.6
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Plane_PickHead_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Cylinder_Wood_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 5,
+            "POSITION": 4,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        0.002399409655481577,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        5.327759690047122e-19,
+        -0.002399409655481577,
+        0.0,
+        0.0,
+        0.002399409655481577,
+        5.327759690047122e-19,
+        0.0,
+        0.0,
+        7.799999934832154e-08,
+        1.9189999989066567e-07,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "4352f281e3a84643954e2850c8952d46.fbx"
+    },
+    {
+      "children": [
+        3,
+        5
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        23.104040145874023,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        23.104040145874002,
+        1.0099096698086804e-06,
+        0.0,
+        0.0,
+        -1.0099096698086804e-06,
+        23.104040145874002,
+        0.0,
+        0.0,
+        63.923954010009766,
+        25.897890090942383,
+        1.0
+      ],
+      "name": "Plane"
+    },
+    {
+      "mesh": 0,
+      "name": "Plane_PickHead_0"
+    },
+    {
+      "children": [
+        6
+      ],
+      "matrix": [
+        2.1475510597229004,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -6.058885142591489e-07,
+        2.147551059722815,
+        0.0,
+        0.0,
+        -48.15093612670707,
+        -1.3584822124677787e-05,
+        0.0,
+        0.0,
+        51.957035064697266,
+        25.897890090942383,
+        1.0
+      ],
+      "name": "Cylinder"
+    },
+    {
+      "mesh": 1,
+      "name": "Cylinder_Wood_0"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}

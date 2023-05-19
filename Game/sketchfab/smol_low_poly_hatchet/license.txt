@@ -1,0 +1,11 @@
+Model Information:
+* title:	Smol low poly hatchet
+* source:	https://sketchfab.com/3d-models/smol-low-poly-hatchet-b4ede53f39c94c2e9e23f9d6d97a1eb5
+* author:	SmolBrain (https://sketchfab.com/smolbraingames)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Smol low poly hatchet" (https://sketchfab.com/3d-models/smol-low-poly-hatchet-b4ede53f39c94c2e9e23f9d6d97a1eb5) by SmolBrain (https://sketchfab.com/smolbraingames) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)

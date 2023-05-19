@@ -1,0 +1,11 @@
+Model Information:
+* title:	Low Poly Pickaxe - Unwrapped and Textured
+* source:	https://sketchfab.com/3d-models/low-poly-pickaxe-unwrapped-and-textured-0fe8b0da76d84ee49a6f2224ca42f7bc
+* author:	scar___ (https://sketchfab.com/scar___)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Low Poly Pickaxe - Unwrapped and Textured" (https://sketchfab.com/3d-models/low-poly-pickaxe-unwrapped-and-textured-0fe8b0da76d84ee49a6f2224ca42f7bc) by scar___ (https://sketchfab.com/scar___) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

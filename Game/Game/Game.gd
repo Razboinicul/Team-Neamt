@@ -4,6 +4,7 @@ var tree_preload = preload("res://Assets/Tree/Tree.tscn")
 var stone_preload = preload("res://Assets/Stone/Stone.tscn")
 var fast_renderer = global.fast_rendering
 var experimental = global.experiments
+var development = global.development
 func _ready():
 	generate_trees()
 	generate_stones()
@@ -18,11 +19,10 @@ func _input(event):
 	if Input.is_action_pressed("attack"):
 		if global.tool == 1:
 			$Player/Camera/Axe.rotation.x = 25
-			$Player/Camera/Axe.rotation.z = 35
+
 			global.axe_attack = true
 	else: 
 		$Player/Camera/Axe.rotation.x = 0
-		$Player/Camera/Axe.rotation.z = 0
 		global.axe_attack = false
 
 func _process(delta):
@@ -33,41 +33,47 @@ func _process(delta):
 func generate_stones():
 	var rng = RandomNumberGenerator.new()
 	var rn_tree = null
-	if not fast_renderer: rn_tree = rng.randi_range(100, 250)
-	else: rn_tree = rng.randi_range(50, 150)
+	if not fast_renderer: rn_tree = rng.randi_range(200, 400)
+	else: rn_tree = rng.randi_range(150, 300)
+	if development: rng.randi_range(100, 200)
 	var count = 0
 	if not experimental:
 		while count <= rn_tree:
-			var _x = rng.randf_range(-217, 217)
+			var _x = rng.randf_range(-590, 590)
 			var stone = stone_preload.instance()
 			stone.wanted_hits = rng.randi_range(2, 6)
 			stone.stone = rng.randi_range(2, 6)
 			$Trees.add_child(stone)
-			var _z = rng.randf_range(-217, 217)
+			var _z = rng.randf_range(-590, 590)
 			stone.transform.origin = Vector3(_x, 0.4, _z)
 			count+=1
 	if experimental:
 		for i in range(0, rn_tree):
-			var _x = rng.randf_range(-217, 217)
+			var _x = rng.randf_range(-590, 590)
 			var stone = stone_preload.instance()
 			stone.wanted_hits = rng.randi_range(2, 6)
 			stone.stone = rng.randi_range(2, 6)
 			$Trees.add_child(stone)
-			var _z = rng.randf_range(-217, 217)
+			var _z = rng.randf_range(-590, 590)
 			stone.transform.origin = Vector3(_x, 0.4, _z)
 
 func generate_trees():
 	var rng = RandomNumberGenerator.new()
 	var rn_tree = null
-	if not fast_renderer: rn_tree = rng.randi_range(1000, 2000)
-	else: rn_tree = rng.randi_range(500, 1000)
+	if not fast_renderer: rn_tree = rng.randi_range(2000, 3000)
+	else: rn_tree = rng.randi_range(1500, 2500)
+	if development: rn_tree = rng.randi_range(500, 1500)
 	var count = 0
 	if not experimental:
 		while count <= rn_tree:
 			var tree = tree_preload.instance()
-			var _x = rng.randf_range(-217, 217)
-			var _z = rng.randf_range(-217, 217)
+			rng.randomize()
+			var _x = rng.randf_range(-590, 590)
+			rng.randomize()
+			var _z = rng.randf_range(-590, 590)
+			rng.randomize()
 			tree.wanted_hits = rng.randi_range(2, 6)
+			rng.randomize()
 			tree.wood = rng.randi_range(2, 6)
 			$Trees.add_child(tree)
 			tree.transform.origin = Vector3(_x, 0.5, _z)
@@ -75,7 +81,28 @@ func generate_trees():
 	if experimental:
 		for i in range(0, rn_tree):
 			var tree = tree_preload.instance()
-			var _x = rng.randf_range(-217, 217)
-			var _z = rng.randf_range(-217, 217)
+			rng.randomize()
+			var _x = rng.randf_range(-590, 590)
+			rng.randomize()
+			var _z = rng.randf_range(-590, 590)
+			rng.randomize()
+			tree.wanted_hits = rng.randi_range(2, 6)
+			rng.randomize()
+			tree.wood = rng.randi_range(2, 6)
 			$Trees.add_child(tree)
 			tree.transform.origin = Vector3(_x, 0.5, _z)
+
+func _on_Timer_timeout():
+	global.night = !global.night
+	if global.night:
+		$WorldEnvironment.environment.ambient_light_energy = 0.1
+		$WorldEnvironment.environment.background_energy = 0.1
+	else:
+		global.days += 1
+		print(global.days)
+		$WorldEnvironment.environment.ambient_light_energy = 1
+		$WorldEnvironment.environment.background_energy = 1
+	$Timer.wait_time = 15
+	$Timer.start()
+	
+	
