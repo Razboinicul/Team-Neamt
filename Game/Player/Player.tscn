@@ -17,8 +17,8 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -0.26818 )
 
 [node name="Axe" parent="Camera" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.5, -2 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, -2 )
 
 [node name="Pickaxe" parent="Camera" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.5, -2 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, -2 )
 visible = false

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Stylized low-poly stone
+* source:	https://sketchfab.com/3d-models/stylized-low-poly-stone-c7de83088a904a1a8b7420b00d395dec
+* author:	Alex_Pepper (https://sketchfab.com/aleksander.smirnov992)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Stylized low-poly stone" (https://sketchfab.com/3d-models/stylized-low-poly-stone-c7de83088a904a1a8b7420b00d395dec) by Alex_Pepper (https://sketchfab.com/aleksander.smirnov992) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
