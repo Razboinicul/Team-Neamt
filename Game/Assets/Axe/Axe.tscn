@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.2, 0.105882, 0.105882, 1 )
+
+[sub_resource type="CylinderShape" id=2]
+radius = 0.214
+
+[node name="Axe" type="Area"]
+
+[node name="CSGCylinder" type="CSGCylinder" parent="."]
+radius = 0.214
+height = 2.0
+sides = 64
+material = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 2 )

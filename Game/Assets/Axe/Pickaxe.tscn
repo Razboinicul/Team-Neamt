@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.2, 0.105882, 0.105882, 1 )
+
+[sub_resource type="CylinderShape" id=2]
+height = 1.25
+radius = 0.214
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.462745, 0.462745, 0.462745, 1 )
+
+[node name="Pickaxe" type="Area"]
+
+[node name="CSGCylinder" type="CSGCylinder" parent="."]
+radius = 0.214
+height = 2.0
+sides = 64
+material = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 2 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.111, 0 )
+shape = SubResource( 2 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.11067, 0 )
+radius = 0.214
+height = 1.25
+sides = 64
+material = SubResource( 3 )
