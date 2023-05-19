@@ -2,8 +2,8 @@ extends Spatial
 
 var tree_preload = preload("res://Assets/Tree/Tree.tscn")
 var stone_preload = preload("res://Assets/Stone/Stone.tscn")
-var fast_renderer = true
-var experimental = false
+var fast_renderer = global.fast_rendering
+var experimental = global.experiments
 func _ready():
 	generate_trees()
 	generate_stones()
@@ -51,7 +51,7 @@ func generate_stones():
 			var _x = rng.randf_range(-217, 217)
 			var stone = stone_preload.instance()
 			stone.wanted_hits = rng.randi_range(2, 6)
-			stone.wood = rng.randi_range(2, 6)
+			stone.stone = rng.randi_range(2, 6)
 			$Trees.add_child(stone)
 			var _z = rng.randf_range(-217, 217)
 			stone.transform.origin = Vector3(_x, 0.4, _z)
