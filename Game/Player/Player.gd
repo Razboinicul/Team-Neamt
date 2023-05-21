@@ -7,6 +7,7 @@ var JUMP_SPEED = 420
 var mouse_sens = 0.3
 var camera_anglev=0
 var rot = 0
+var last_wood = 0
 var friction = true
 var tool = 1
 var jumping = false
@@ -16,7 +17,18 @@ var col: Array
 var hits = 0
 var wanted_hits: int = 150
 func _process(delta):
+	if global.wood >= last_wood+1000:
+		var enemy = preload("res://Enemies/Target.tscn").instance()
+		rng.randomize()
+		var _x = global_translation.x+rng.randf_range(-1, 15)
+		rng.randomize()
+		var _z = global_translation.z+rng.randf_range(-1, 15)
+		get_owner().add_child(enemy)
+		enemy.transform.origin = Vector3(_x, 0.5, _z)
+		last_wood += 1000
 	if hits == wanted_hits:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_owner().get_node("Died").show()
 		queue_free()
 
 func _input(event):
@@ -26,12 +38,12 @@ func _input(event):
 		if camera_anglev+changev>-50 and camera_anglev+changev<50:
 			camera_anglev+=changev
 			$Camera.rotate_x(deg2rad(changev))
-	if Input.is_action_pressed("attack"):
-		if global.tool == 2:
-			$Camera/Pickaxe.mine()
-	else:
-		if global.tool == 2:
-			$Camera/Pickaxe.dont_mine()
+	#if Input.is_action_pressed("attack"):
+		#if global.tool == 2:
+			#$Camera/Pickaxe.mine()
+	#else:
+		#if global.tool == 2:
+			#$Camera/Pickaxe.dont_mine()
 	if Input.is_action_pressed("attack"):
 		if global.tool == 1:
 			$Camera/Axe.rotation.x = 25

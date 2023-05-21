@@ -19,11 +19,25 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -28.5
-margin_top = -7.0
+margin_top = -107.0
 margin_right = 28.5
-margin_bottom = 7.0
+margin_bottom = -93.0
 rect_scale = Vector2( 1.5, 1.5 )
 text = "You Died"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -55.9999
+margin_top = -33.0
+margin_right = 42.0001
+margin_bottom = -19.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Score: 000"
 align = 1
 valign = 1
 
@@ -33,9 +47,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -28.0
-margin_top = 78.0
+margin_top = 193.0
 margin_right = 26.0
-margin_bottom = 98.0
+margin_bottom = 213.0
 rect_scale = Vector2( 1.5, 1.5 )
 text = "Replay"
 flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

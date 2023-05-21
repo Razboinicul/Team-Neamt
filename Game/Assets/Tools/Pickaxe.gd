@@ -6,11 +6,11 @@ func _process(delta):
 		hide()
 		$CollisionShape.disabled = true
 		$CollisionShape2.disabled = true
-	if Input.is_key_pressed(KEY_2):
-		global.tool = 2
-		show()
-		$CollisionShape.disabled = false
-		$CollisionShape2.disabled = false
+	#if Input.is_key_pressed(KEY_2):
+		#global.tool = 2
+		#show()
+		#$CollisionShape.disabled = false
+		#$CollisionShape2.disabled = false
 	
  
 func mine():

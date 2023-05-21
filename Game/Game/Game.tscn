@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Game.gd" type="Script" id=2]
 [ext_resource path="res://Assets/House/House.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Monsters/Target.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemies/Target.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Dead/Died.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.00784314, 0.764706, 0, 1 )
@@ -68,6 +69,7 @@ margin_bottom = 39.0
 text = "Wood: 0"
 
 [node name="Stone" type="Label" parent="UI"]
+visible = false
 modulate = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
 margin_top = 50.0
 margin_right = 53.0
@@ -93,7 +95,6 @@ transform = Transform( -2.18557e-06, 0, 50, 0, 50, 0, -50, 0, -2.18557e-06, 0, 0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 15.0
-autostart = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 6 )
@@ -101,4 +102,14 @@ environment = SubResource( 6 )
 [node name="Target" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.06052, -534.137 )
 
+[node name="Died" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[node name="Enemies" type="Node" parent="."]
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

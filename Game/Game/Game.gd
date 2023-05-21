@@ -5,20 +5,21 @@ var stone_preload = preload("res://Assets/Stone/Stone.tscn")
 var fast_renderer = global.fast_rendering
 var experimental = global.experiments
 var development = global.development
+var s_gen = false
+var rng = RandomNumberGenerator.new()
 func _ready():
 	generate_trees()
-	generate_stones()
+	#generate_stones()
 
 func _input(event):
 	pass
 
 func _process(delta):
 	$UI/Wood.text = "Wood: "+str(global.wood)
-	$UI/Stone.text = "Stone: "+str(global.stone)
+	#$UI/Stone.text = "Stone: "+str(global.stone)
 	$UI/FPS.text = "FPS: "+str(Engine.get_frames_per_second())
 
 func generate_stones():
-	var rng = RandomNumberGenerator.new()
 	var rn_tree = null
 	if not fast_renderer: rn_tree = rng.randi_range(200, 400)
 	else: rn_tree = rng.randi_range(150, 300)
@@ -45,7 +46,6 @@ func generate_stones():
 			stone.transform.origin = Vector3(_x, 0.4, _z)
 
 func generate_trees():
-	var rng = RandomNumberGenerator.new()
 	var rn_tree = null
 	if not fast_renderer: rn_tree = rng.randi_range(2000, 3000)
 	else: rn_tree = rng.randi_range(1500, 2500)
@@ -89,7 +89,17 @@ func _on_Timer_timeout():
 		print(global.days)
 		$WorldEnvironment.environment.ambient_light_energy = 1
 		$WorldEnvironment.environment.background_energy = 1
-	$Timer.wait_time = 15
+	$Timer.wait_time = 900
 	$Timer.start()
-	
-	
+
+func _on_SpawnTimer_timeout():
+	var tree = preload("res://Enemies/Target.tscn").instance()
+	rng.randomize()
+	var _x = rng.randf_range(-590, 590)
+	rng.randomize()
+	var _z = rng.randf_range(-590, 590)
+	$Enemies.add_child(tree)
+	tree.transform.origin = Vector3(_x, 0.5, _z)
+	$SpawnTimer.wait_time = rng.randi_range(30, 180)
+	$SpawnTimer.start($SpawnTimer.wait_time)
+
