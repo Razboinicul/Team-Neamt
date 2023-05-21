@@ -21,7 +21,7 @@ margin_top = 120.0
 margin_right = 2.0
 margin_bottom = 134.0
 rect_scale = Vector2( 2, 2 )
-text = "The Forest of Hell"
+text = "The Magical Forest"
 
 [node name="Play" type="Button" parent="."]
 anchor_left = 0.5
@@ -58,19 +58,16 @@ rect_scale = Vector2( 2, 2 )
 text = "Exit"
 flat = true
 
-[node name="Label2" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -214.0
-margin_top = -68.0
-margin_right = -1.0
-margin_bottom = -54.0
+[node name="Button" type="Button" parent="."]
+margin_left = 298.0
+margin_top = 532.0
+margin_right = 523.0
+margin_bottom = 552.0
 rect_scale = Vector2( 2, 2 )
 text = "!!! Generating may take a while !!!"
-align = 1
+flat = true
 
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

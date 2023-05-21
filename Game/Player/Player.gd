@@ -11,13 +11,35 @@ var friction = true
 var tool = 1
 var jumping = false
 var frame = 0
-func _input(event): 
+var rng = RandomNumberGenerator.new()
+var col: Array
+var hits = 0
+var wanted_hits: int = 150
+func _process(delta):
+	if hits == wanted_hits:
+		queue_free()
+
+func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(deg2rad(-event.relative.x*mouse_sens))
 		var changev=-event.relative.y*mouse_sens
 		if camera_anglev+changev>-50 and camera_anglev+changev<50:
 			camera_anglev+=changev
 			$Camera.rotate_x(deg2rad(changev))
+	if Input.is_action_pressed("attack"):
+		if global.tool == 2:
+			$Camera/Pickaxe.mine()
+	else:
+		if global.tool == 2:
+			$Camera/Pickaxe.dont_mine()
+	if Input.is_action_pressed("attack"):
+		if global.tool == 1:
+			$Camera/Axe.rotation.x = 25
+			global.axe_attack = true
+	else: 
+		$Camera/Axe.rotation.x = 0
+		global.axe_attack = false
+
 
 func _physics_process(delta):
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

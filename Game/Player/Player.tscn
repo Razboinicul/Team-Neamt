@@ -1,10 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Tools/Axe.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Tools/Pickaxe.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
+radius = 1.25
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.565732, 0.920773, 0.374451 )
 
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -13,6 +17,10 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.56017, 0 )
 shape = SubResource( 1 )
 
+[node name="CollisionShape4" type="CollisionShape" parent="."]
+transform = Transform( 0.493548, 0, 0, 0, 1.03827, 0, 0, 0, 1.44903, 0.551356, 1.84098, -1.51393 )
+shape = SubResource( 2 )
+
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -0.26818 )
 
@@ -20,5 +28,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -0.26818 )
 transform = Transform( -4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, 0.600939, -1.02706, -1.46659 )
 
 [node name="Pickaxe" parent="Camera" instance=ExtResource( 3 )]
-transform = Transform( -2.62268e-10, 0, 0.006, 0, 0.006, 0, -0.006, 0, -2.62268e-10, 0.601, -1.3, -1.467 )
+transform = Transform( -2.62268e-10, 0, 0.006, 0, 0.006, 0, -0.006, 0, -2.62268e-10, 0.601, -1.3, -1.31313 )
 visible = false
+
+[node name="_Player" type="Area" parent="."]
+
+[node name="CollisionShape2" type="CollisionShape" parent="_Player"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.56017, 0 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="_Player"]
+transform = Transform( 0.493548, 0, 0, 0, 1.03827, 0, 0, 0, 1.44903, 0.551356, 1.84098, -1.51393 )
+shape = SubResource( 2 )

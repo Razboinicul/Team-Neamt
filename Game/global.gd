@@ -10,6 +10,8 @@ var experiments = false
 var development = true
 var days = 1
 var night = true
+var target_attack = false
+var tester = false
 
 func _ready():
 	if development:

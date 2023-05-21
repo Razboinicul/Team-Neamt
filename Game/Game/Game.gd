@@ -10,20 +10,7 @@ func _ready():
 	generate_stones()
 
 func _input(event):
-	if Input.is_action_pressed("attack"):
-		if global.tool == 2:
-			$Player/Camera/Pickaxe.mine()
-	else:
-		if global.tool == 2:
-			$Player/Camera/Pickaxe.dont_mine()
-	if Input.is_action_pressed("attack"):
-		if global.tool == 1:
-			$Player/Camera/Axe.rotation.x = 25
-
-			global.axe_attack = true
-	else: 
-		$Player/Camera/Axe.rotation.x = 0
-		global.axe_attack = false
+	pass
 
 func _process(delta):
 	$UI/Wood.text = "Wood: "+str(global.wood)
@@ -35,7 +22,7 @@ func generate_stones():
 	var rn_tree = null
 	if not fast_renderer: rn_tree = rng.randi_range(200, 400)
 	else: rn_tree = rng.randi_range(150, 300)
-	if development: rng.randi_range(100, 200)
+	if development: rn_tree = 10
 	var count = 0
 	if not experimental:
 		while count <= rn_tree:
@@ -62,7 +49,7 @@ func generate_trees():
 	var rn_tree = null
 	if not fast_renderer: rn_tree = rng.randi_range(2000, 3000)
 	else: rn_tree = rng.randi_range(1500, 2500)
-	if development: rn_tree = rng.randi_range(500, 1500)
+	if development: rn_tree = 10
 	var count = 0
 	if not experimental:
 		while count <= rn_tree:
